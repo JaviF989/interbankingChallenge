@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: Interbanking-Api
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: admin
+    password: Aiken2022!
+    url: "jdbc:mysql://localhost:3306/interbanking_challenge"
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
