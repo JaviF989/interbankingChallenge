@@ -11,15 +11,15 @@ import java.util.List;
 public class SearchCompaniesCuitWithActiveTransfersPortImpl
         implements SearchCompaniesCuitWithActiveTransfersPort {
 
+    private final TransferRepositoryPort transferRepositoryPort;
     public SearchCompaniesCuitWithActiveTransfersPortImpl
-            (TransferRepositoryPort transactionRepositoryPort) {
-        this.transactionRepositoryPort = transactionRepositoryPort;
+            (TransferRepositoryPort transferRepositoryPort) {
+        this.transferRepositoryPort = transferRepositoryPort;
     }
 
-    TransferRepositoryPort transactionRepositoryPort;
     @Override
     public List<String> getCompaniesWithActiveTransfers() {
         LocalDate fromDate = LocalDate.now().minusMonths(1);
-        return transactionRepositoryPort.getCompaniesCuitWithActiveTransfers(fromDate);
+        return transferRepositoryPort.getCompaniesCuitWithActiveTransfers(fromDate);
     }
 }

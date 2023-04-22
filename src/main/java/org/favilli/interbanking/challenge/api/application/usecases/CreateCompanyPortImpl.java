@@ -6,6 +6,8 @@ import org.favilli.interbanking.challenge.api.domain.model.Company;
 import org.favilli.interbanking.challenge.api.application.ports.input.CreateCompanyPort;
 import org.favilli.interbanking.challenge.api.application.ports.output.CompanyRepositoryPort;
 
+import java.time.LocalDate;
+
 @UseCase
 public class CreateCompanyPortImpl implements CreateCompanyPort {
 
@@ -19,7 +21,9 @@ public class CreateCompanyPortImpl implements CreateCompanyPort {
         Company company = Company.builder()
                 .cuit(inputCompanyPort.getCuit())
                 .businessName(inputCompanyPort.getBusinessName())
+                .accessionDate(LocalDate.now())
                 .build();
+
         return companyRepositoryPort.save(company);
     }
 }
