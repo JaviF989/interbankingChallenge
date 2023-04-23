@@ -25,16 +25,29 @@ public class CompanyService implements CreateCompanyPort, SearchNewCompaniesPort
         this.searchActiveCompaniesByCuitPort = searchActiveCompaniesByCuitPort;
     }
 
+    /**
+     * Create a new @Company
+     * @param @InputCompany
+     * @return @Company than we save
+     */
     @Override
     public Company createCompany(InputCompanyPort inputCompanyPort) {
         return createCompanyPort.createCompany(inputCompanyPort);
     }
 
+    /**
+     * Search the companies than join us in the last month.
+     * @return List of @Company than join us the last month
+     */
     @Override
     public List<Company> getNewCompanies() {
         return searchNewCompaniesPort.getNewCompanies();
     }
 
+    /**
+     * Search by Cuit the companies than has transfers in the last month
+     * @return List of @Company than has transfers in the last month
+     */
     @Override
     public List<Company> getActiveCompaniesByCuit() {
         return this.searchActiveCompaniesByCuitPort.getActiveCompaniesByCuit();

@@ -13,6 +13,10 @@ public class TransferService implements SearchCompaniesCuitWithActiveTransfersPo
         this.searchCompaniesCuitWithActiveTransfersPort = searchCompaniesCuitWithActiveTransfersPort;
     }
 
+    /**
+     * Search the Cuils of the Companies than made transfers the last month
+     * @return @Company's Cuils than made transfers this last month
+     */
     @Override
     public List<String> getCompaniesWithActiveTransfers() {
         return searchCompaniesCuitWithActiveTransfersPort.getCompaniesWithActiveTransfers();
