@@ -14,7 +14,8 @@ public class Transfer {
     private String cuit;
     private double amount;
     private String debitAccount;
-
+    private String creditAccount;
+    private LocalDate date;
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -28,7 +29,6 @@ public class Transfer {
         return Objects.hash(getId(), getCuit(), getAmount(), getDebitAccount(), getCreditAccount(), getDate());
     }
 
-    private String creditAccount;
-    private LocalDate date;
+
 
 }
