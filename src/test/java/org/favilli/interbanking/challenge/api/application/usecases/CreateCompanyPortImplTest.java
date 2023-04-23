@@ -37,6 +37,6 @@ class CreateCompanyPortImplTest {
                 .build();
         when(companyRepositoryPort.save(createdCompany)).thenReturn(createdCompany);
         Company savedCompany = createCompanyPortImpl.createCompany(inputCompanyPort);
-        assertEquals(inputCompanyPort.getBusinessName(), createdCompany.getBusinessName());
+        assertEquals(inputCompanyPort.getBusinessName(), savedCompany.getBusinessName());
     }
 }
