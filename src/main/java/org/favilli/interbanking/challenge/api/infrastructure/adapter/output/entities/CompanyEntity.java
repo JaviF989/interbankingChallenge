@@ -19,6 +19,10 @@ public class CompanyEntity {
     @Id
     @Column(name = "cuit", length = 13)
     private String cuit;
+    @Column(name = "business_name")
+    private String businessName;
+    @Column(name = "accession_date")
+    private LocalDate accessionDate;
 
     @Override
     public boolean equals(Object o) {
@@ -32,10 +36,4 @@ public class CompanyEntity {
     public int hashCode() {
         return Objects.hash(getCuit(), getBusinessName(), getAccessionDate());
     }
-
-    @Column(name = "business_name")
-    private String businessName;
-    @Column(name = "accession_date")
-    private LocalDate accessionDate;
-
 }

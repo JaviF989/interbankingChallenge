@@ -20,6 +20,11 @@ public class TransferEntity {
     private long id;
     private String cuit;
     private double amount;
+    @Column(name = "debit_account")
+    private String debitAccount;
+    @Column(name = "credit_account")
+    private String creditAccount;
+    private LocalDate date;
 
     @Override
     public boolean equals(Object o) {
@@ -33,10 +38,4 @@ public class TransferEntity {
     public int hashCode() {
         return Objects.hash(getId(), getCuit(), getAmount(), getDebitAccount(), getCreditAccount(), getDate());
     }
-
-    @Column(name = "debit_account")
-    private String debitAccount;
-    @Column(name = "credit_account")
-    private String creditAccount;
-    private LocalDate date;
 }
