@@ -4,7 +4,6 @@ import org.favilli.interbanking.challenge.api.domain.model.Company;
 import org.favilli.interbanking.challenge.api.infrastructure.adapter.output.entities.CompanyEntity;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -14,13 +13,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CompanyEntityToCompanyDTOTest {
 
-    private CompanyEntityToCompanyDTO companyEntityToCompanyDTO = new CompanyEntityToCompanyDTO();
+    private CompanyEntityToCompanyDTO companyEntityToCompanyDTO;
     private CompanyEntity firstEntity;
     private CompanyEntity secondEntity;
     private Company firstCompany;
     private Company secondCompany;
     @BeforeEach
     void setUp() {
+        companyEntityToCompanyDTO = new CompanyEntityToCompanyDTO();
         firstEntity = new CompanyEntity("12345678901", "firstCompany",
                 LocalDate.now().minusDays(3));
 

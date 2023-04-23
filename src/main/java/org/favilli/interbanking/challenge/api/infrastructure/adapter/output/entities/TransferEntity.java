@@ -24,6 +24,7 @@ public class TransferEntity {
     private String debitAccount;
     @Column(name = "credit_account")
     private String creditAccount;
+    @Column(name = "dates")
     private LocalDate date;
 
     @Override

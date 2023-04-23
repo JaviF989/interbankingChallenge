@@ -9,6 +9,6 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface TransferRepositoryJPA extends JpaRepository <TransferEntity, Long> {
-    @Query(value = "SELECT DISTINCT `cuit` FROM `transfer` WHERE `date` >=:fromDate", nativeQuery = true)
+    @Query(value = "SELECT DISTINCT `cuit` FROM `transfer` WHERE `dates` >=:fromDate", nativeQuery = true)
     List<String> getCompaniesWithActiveTransactions(@Param("fromDate")LocalDate fromDate);
 }
